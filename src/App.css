@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+.S {
+  width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .S {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+  } 
+}
+
+.SField {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #eee;
+  border-radius: 5px 5px 0 0
+}
+
+.SField:focus {
+  outline: none;
+}
+
+.SList {
+  width: 100%;
+  font-size: 1rem;
+  list-style: none;
+  border: 1px solid #eee;
+  border-radius: 0 0 5px 5px
+}
+
+.SList li {
+  padding: 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+}
