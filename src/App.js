@@ -10,16 +10,17 @@ class App extends Component {
     super(props);
     this.state = {
       searchResult: FakeData,
+      inputValue: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.searcher = this.searchInit();
   }
 
-  updateValue(v) {
+  updateValue(item) {
     this.setState({
-      inputValue: v
-    })
+      inputValue: item.label
+    });
   }
 
   searchInit() {

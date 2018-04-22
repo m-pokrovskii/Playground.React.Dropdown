@@ -7,13 +7,14 @@ export default class ListItem extends Component {
     this.selectItem(this.props.item);
   }
 
-  selectItem(item) {
-    console.log(item);
+  selectItem() {
+    const item = this.props.item;
+    this.props.updateValue(item);
   }
 
   render() {
     return (
-      <li >{this.props.item.label}</li>
+      <li onClick={this.selectItem.bind(this)} >{this.props.item.label}</li>
     )
   }
 }
