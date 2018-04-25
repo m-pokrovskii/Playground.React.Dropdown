@@ -10,17 +10,11 @@ class App extends Component {
     super(props);
     this.state = {
       searchResult: FakeData,
-      inputValue: ""
+      inputValue: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.searcher = this.searchInit();
-  }
-
-  updateValue(item) {
-    this.setState({
-      inputValue: item.label
-    });
   }
 
   searchInit() {
@@ -28,9 +22,11 @@ class App extends Component {
   }
 
   handleInputChange(e) {
-    this.updateValue(e.target.value);
+    const inputValue = e.target.value;
+    this.setState({
+      inputValue
+    });
     
-    const inputValue = e.target.value.trim();
     if (inputValue) {
       const searchResult = this.searcher.search(inputValue);
       if ( searchResult ) {
@@ -41,17 +37,22 @@ class App extends Component {
     }
   }
 
+  updateValue(v) {
+    this.setState({
+      inputValue: v
+    })
+  }
 
   render() {
     return (      
       <div className="App">
         <div className="S">
           <Input
-            inputValue = {this.state.inputValue}
-            handleInputChange={this.handleInputChange}
+            value = {this.state.inputValue}
+            onChange={this.handleInputChange}
           />
           <List 
-            updateValue = { this.updateValue }
+            onClick = { this.updateValue }
             items={ this.state.searchResult } 
           />
         </div>

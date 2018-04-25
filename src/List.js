@@ -6,7 +6,7 @@ export default class List extends Component {
     return (
         <ul className="SList">
           { this.props.items.map( (v,k) => 
-            <ListItem updateValue={this.props.updateValue} key={k} item={v} />
+            <ListItem onClick={this.props.onClick} key={k} item={v} />
           ) }
         </ul>
     )
